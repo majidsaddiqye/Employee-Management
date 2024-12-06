@@ -3,6 +3,13 @@ const employees = [
     id: 1,
     email: "employee1@example.com",
     password: "123",
+    fname: "Ahmed",
+    taskCounts: {
+      active: 2,
+      newTask: 1,
+      completed: 1,
+      failed: 0,
+    },
     tasks: [
       {
         taskTitle: "Complete project report",
@@ -40,6 +47,13 @@ const employees = [
     id: 2,
     email: "employee2@example.com",
     password: "123",
+    fname: "Ali",
+    taskCounts: {
+      active: 2,
+      newTask: 2,
+      completed: 1,
+      failed: 0,
+    },
     tasks: [
       {
         taskTitle: "Data analysis",
@@ -77,6 +91,13 @@ const employees = [
     id: 3,
     email: "employee3@example.com",
     password: "password123",
+    fname: "Fatima",
+    taskCounts: {
+      active: 3,
+      newTask: 2,
+      completed: 1,
+      failed: 0,
+    },
     tasks: [
       {
         taskTitle: "Market research",
@@ -120,91 +141,8 @@ const employees = [
       },
     ],
   },
-  {
-    id: 4,
-    email: "employee4@example.com",
-    password: "123",
-    tasks: [
-      {
-        taskTitle: "Inventory check",
-        taskDescription: "Verify stock levels in warehouse A",
-        taskDate: "2024-12-04",
-        taskCategory: "Inventory",
-        active: false,
-        newTask: false,
-        completed: true,
-        failed: false,
-      },
-      {
-        taskTitle: "Client follow-up",
-        taskDescription: "Follow up with Client X regarding feedback",
-        taskDate: "2024-12-11",
-        taskCategory: "Customer Relations",
-        active: true,
-        newTask: true,
-        completed: false,
-        failed: false,
-      },
-      {
-        taskTitle: "Website testing",
-        taskDescription: "Perform cross-browser testing on the homepage",
-        taskDate: "2024-12-06",
-        taskCategory: "QA",
-        active: false,
-        newTask: false,
-        completed: true,
-        failed: false,
-      },
-    ],
-  },
-  {
-    id: 5,
-    email: "employee5@example.com",
-    password: "123",
-    tasks: [
-      {
-        taskTitle: "Training session",
-        taskDescription: "Conduct training on the new CRM system",
-        taskDate: "2024-12-13",
-        taskCategory: "Training",
-        active: true,
-        newTask: true,
-        completed: false,
-        failed: false,
-      },
-      {
-        taskTitle: "Prepare newsletter",
-        taskDescription: "Draft the December newsletter for subscribers",
-        taskDate: "2024-12-15",
-        taskCategory: "Marketing",
-        active: true,
-        newTask: true,
-        completed: false,
-        failed: false,
-      },
-      {
-        taskTitle: "Fix performance issues",
-        taskDescription: "Optimize the API response times",
-        taskDate: "2024-12-06",
-        taskCategory: "Development",
-        active: false,
-        newTask: false,
-        completed: true,
-        failed: false,
-      },
-      {
-        taskTitle: "Plan team outing",
-        taskDescription: "Organize a year-end team outing event",
-        taskDate: "2024-12-20",
-        taskCategory: "HR",
-        active: true,
-        newTask: true,
-        completed: false,
-        failed: false,
-      },
-    ],
-  },
 ];
+
 
 const admin = [
   {
@@ -224,5 +162,5 @@ export const setLocalStorage = () => {
 export const getLocalStorage = () => {
   const employees = JSON.parse(localStorage.getItem("employees"));
   const admin = JSON.parse(localStorage.getItem("admin"));
-  console.log(employees,admin)
+  return { employees, admin };
 };

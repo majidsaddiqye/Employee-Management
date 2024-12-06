@@ -1,6 +1,6 @@
 import React from "react";
 
-const TaskList = () => {
+const TaskList = ({loggedInUserData}) => {
   return (
     <div className="bg-[#1c1c1c] h-screen w-full flex flex-wrap gap-5 py-5 mt-10 justify-start items-start">
       {/* Card with Updated Color */}
