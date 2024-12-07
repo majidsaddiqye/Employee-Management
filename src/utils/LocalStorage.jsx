@@ -90,8 +90,118 @@ const employees = [
   {
     id: 3,
     email: "employee3@example.com",
-    password: "password123",
+    password: "123",
     fname: "Fatima",
+    taskCounts: {
+      active: 3,
+      newTask: 2,
+      completed: 1,
+      failed: 0,
+    },
+    tasks: [
+      {
+        taskTitle: "Market research",
+        taskDescription: "Compile competitor pricing strategies",
+        taskDate: "2024-12-07",
+        taskCategory: "Research",
+        active: true,
+        newTask: false,
+        completed: false,
+        failed: false,
+      },
+      {
+        taskTitle: "Team feedback session",
+        taskDescription: "Organize a meeting for feedback on the Q1 roadmap",
+        taskDate: "2024-12-14",
+        taskCategory: "Meetings",
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+      },
+      {
+        taskTitle: "Bug fixing",
+        taskDescription: "Fix login page validation issues",
+        taskDate: "2024-12-06",
+        taskCategory: "Development",
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+      },
+      {
+        taskTitle: "Prepare holiday campaign",
+        taskDescription: "Design banners for the year-end sale",
+        taskDate: "2024-12-20",
+        taskCategory: "Marketing",
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+      },
+    ],
+  },
+
+  {
+    id: 3,
+    email: "employee4@example.com",
+    password: "123",
+    fname: "Bilal Abdullah",
+    taskCounts: {
+      active: 3,
+      newTask: 2,
+      completed: 1,
+      failed: 0,
+    },
+    tasks: [
+      {
+        taskTitle: "Market research",
+        taskDescription: "Compile competitor pricing strategies",
+        taskDate: "2024-12-07",
+        taskCategory: "Research",
+        active: true,
+        newTask: false,
+        completed: false,
+        failed: false,
+      },
+      {
+        taskTitle: "Team feedback session",
+        taskDescription: "Organize a meeting for feedback on the Q1 roadmap",
+        taskDate: "2024-12-14",
+        taskCategory: "Meetings",
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+      },
+      {
+        taskTitle: "Bug fixing",
+        taskDescription: "Fix login page validation issues",
+        taskDate: "2024-12-06",
+        taskCategory: "Development",
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+      },
+      {
+        taskTitle: "Prepare holiday campaign",
+        taskDescription: "Design banners for the year-end sale",
+        taskDate: "2024-12-20",
+        taskCategory: "Marketing",
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+      },
+    ],
+  },
+
+  {
+    id: 3,
+    email: "employee5@example.com",
+    password: "123",
+    fname: "Fatima Sheikh",
     taskCounts: {
       active: 3,
       newTask: 2,
@@ -143,15 +253,11 @@ const employees = [
   },
 ];
 
-
-const admin = 
-  {
-    id: 1,
-    email: "admin@example.com",
-    password: "123",
-  }
-;
-
+const admin = {
+  id: 1,
+  email: "admin@example.com",
+  password: "123",
+};
 // export a setlocalstorage function
 export const setLocalStorage = () => {
   localStorage.setItem("employees", JSON.stringify(employees));
