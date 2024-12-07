@@ -56,9 +56,9 @@ const App = () => {
       {/* login Authentication */}
       {!user ? <Login handleLogin={handleLogin} /> : ""}
       {user == "admin" ? (
-        <AdminDashboard />
+        <AdminDashboard changeUser={setUser} />
       ) : user == "employee" ? (
-        <EmployeeDashboard loggedInUserData={loggedInUserData} />
+        <EmployeeDashboard loggedInUserData={loggedInUserData} changeUser={setUser} />
       ) : null}
     </>
   );
