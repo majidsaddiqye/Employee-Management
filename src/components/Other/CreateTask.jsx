@@ -1,6 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { AuthContext } from "../../context/AuthProvider";
 
 const CreateTask = () => {
+  const [userData, setUserData] = useContext(AuthContext);
+
   const [taskTitle, setTaskTitle] = useState("");
   const [taskDescription, setTaskDescription] = useState("");
   const [taskDate, setTaskDate] = useState("");
@@ -23,18 +26,23 @@ const CreateTask = () => {
       failed: false,
     };
     setTask(newTask);
-  const data = JSON.parse(localStorage.getItem('employees'))
-  data.forEach((elem) => {
-   if(taskAssignTo == elem.fname){
-    elem.tasks.push(task)
-    console.log(elem)
+    const data = userData;
+    
+
+    data.forEach((elem) => {
+      if (taskAssignTo == elem.fname) {
+        elem.tasks.push(task);
+        elem.taskCounts.newTask = elem.taskCounts.newTask + 1;
+      }
+    });
+    setUserData(data);
+    console.log(data);
+    
     setTaskAssignTo("");
     setTaskCategory("");
     setTaskDate("");
     setTaskDescription("");
     setTaskTitle("");
-   }
-  });
   };
   return (
     <div className="p-5 bg-[#1C1C1C] mt-7 rounded">
